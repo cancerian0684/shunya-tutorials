@@ -1,6 +1,6 @@
-package com.shunya.tutorials;
+package com.shunya.tutorials.deadlock;
 
-public class DeadLock {
+public class DeadLockSolutin2 {
 
     String resource1 = "Resource1";
     String resource2 = "Resource2";
@@ -21,8 +21,8 @@ public class DeadLock {
     public void thread2Work() {
         Thread t2 = new Thread(() -> {
             while (true) {
-                synchronized (resource2) {
-                    synchronized (resource1) {
+                synchronized (resource1) {
+                    synchronized (resource2) {
                         System.out.println(resource1 + resource2);
                     }
                 }
@@ -32,7 +32,7 @@ public class DeadLock {
     }
 
     public static void main(String[] args) {
-        DeadLock deadLock = new DeadLock();
+        DeadLockSolutin2 deadLock = new DeadLockSolutin2();
         deadLock.thread1Work();
         deadLock.thread2Work();
     }
