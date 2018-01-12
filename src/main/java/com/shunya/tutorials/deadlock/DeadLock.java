@@ -2,8 +2,8 @@ package com.shunya.tutorials.deadlock;
 
 public class DeadLock {
 
-    String resource1 = "Resource1";
-    String resource2 = "Resource2";
+    final String resource1 = "Resource1";
+    final String resource2 = "Resource2";
 
     public void thread1Work() {
         Thread t1 = new Thread(() -> {

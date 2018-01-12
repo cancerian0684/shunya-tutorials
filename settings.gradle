@@ -1,2 +1,3 @@
 rootProject.name = 'shunya-tutorials'
+include 'core-java'
 
